@@ -20,4 +20,9 @@ public class ApplicationUserController {
   public List<ApplicationUser> getAllUsers() {
     return applicationUserRepository.findAll();
   }
+  
+  @GetMapping("/count")
+  public long getCount() {
+	  return applicationUserRepository.count();
+  }
 }

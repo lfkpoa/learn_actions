@@ -27,10 +27,12 @@ class TestGithubActionsJavaMavenApplicationIT {
   void testError() {
 	  this.webTestClient
 	  .get()
-      .uri("/api/users")
+      .uri("/api/users/count")
       .exchange()
       .expectStatus()
-      .isNotFound();
+      .isOk()
+      .expectBody()
+      .json("3");
   }
   
 }
